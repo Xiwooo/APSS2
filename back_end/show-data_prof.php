@@ -30,7 +30,7 @@ $stageAttente = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countStageAttente = count($stageAttente);
 
 // Recherche des démarches effectuées par les étudiants de BTS SIO1  
-// pour le professeur de référence de la classe teste
+// pour le professeur de référence de la classe testeeee
 $stmt = $db->prepare(
     "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
         FROM etudiant LEFT JOIN demarche ON ETUDIANT.ID_ETUDIANT=DEMARCHE.ID_ETUDIANT 
