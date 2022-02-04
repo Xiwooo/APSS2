@@ -45,9 +45,9 @@
                                     $_SESSION['entreprise_nom'] = $entreprise['NOM_ENTREPRISE'];
                                 ?>
                                 <form action="requete_refus_demarche.php">
-                                        <input type="submit" value="Go to requete.php">
+                                        <input type="submit" value="L'entreprise ne souhaite plus être démarchée">
                                 </form>
-                                <button type="submit" name="refus_demarche" id="refus_demarche">L'entreprise ne veut plus être démarchée</button>
+                                
                                 
 
                                 
