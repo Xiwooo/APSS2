@@ -81,7 +81,7 @@ $stmt->execute();
 $etudiantsProfSimpleDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfsimple = count($etudiantsProfSimpleDemarche);
 
-// Conservation des démarches non nulles selon le ype du professeurggg
+// Conservation des démarches non nulles selon le ype du professeur
 if ($countDemarcheProfref>=1) {
     $demarches=$etudiantsProfRefDemarche;
 } else if ($countDemarcheProfspe>=1) {
