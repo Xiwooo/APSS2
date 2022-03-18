@@ -6,7 +6,7 @@ include '../back_end/Fonction.php';
  *   ce fichier permet de retrouver les informations générales
  *    du tableau de bord. Informations statistiques  affichées 
  * // aux étudiants et professeurs pour mesurer l'avancement général
- *  d   des recherches de la classe
+ *  des recherches de la classe
  **/ 
 // recherche des étudiants  ceux de SIO1
 // ainsi que le nombre d'étudiants
