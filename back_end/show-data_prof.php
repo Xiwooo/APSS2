@@ -11,7 +11,7 @@ $id_courant=$_SESSION['id'];
 
 
 // Recherche des stages non validés dans la même spécialité  
-// que celle du professeur connecté s'il est professeur de spécialité
+// que celle du professeur connecté s'il est professeur de spécidfsdfalitétgg
 $stmt = $db->prepare(
     "SELECT ID_STAGE,DATE_FIN,DATE_DEBUT, NOM_ETUDIANT,
             PRENOM_ETUDIANT,NOM_ENTREPRISE,
