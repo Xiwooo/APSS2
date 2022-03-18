@@ -62,8 +62,8 @@ $stmt->execute();
 $etudiantsProfSpeDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfspe = count($etudiantsProfSpeDemarche);
 
-// Recherche des démarches effectuées par les étudiants de BTS SIO1dddddddddd:ll;
-// décompte des démarches effectuées par chaque étudiant associé à un simple professeur
+// Recherche des démarches effectuées par les étudiants de BTS SIO1
+// décompte des démarches effectuées par chaque étudiant associé à un simple professeurcvbcvbcvvcbqsdffffd
 $stmt = $db->prepare(
     "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
         FROM etudiant 
