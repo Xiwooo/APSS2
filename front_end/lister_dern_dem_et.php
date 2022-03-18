@@ -2,7 +2,21 @@
 //  Ce fichier comporte l'affichage de toutes les démarches
 // de l'étudiant courant.
 // cette affichage sera inclus dans le tableau e bord de l'étudiant 
-// et celui du professeur 
+// et celui du professeur kkzfpoekfzopekfzopekfzpeofzpeokfzpeofkzpeofkzopefzekpfozpfkekofpezopfez
+zef
+pzef
+^pzef
+pz
+efpz
+packzmldfzefzefzf
+zef
+zef
+zef
+ze
+fze
+fez
+
+
 -->
 
 <div class="row">
