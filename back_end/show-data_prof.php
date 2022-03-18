@@ -64,7 +64,7 @@ $stmt->execute();
 $etudiantsProfSpeDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfspe = count($etudiantsProfSpeDemarche);
 
-// Recherche des démarches effectuées par les étudiants de BTS SIO1
+// Recherche des démarches effectuées par les étudiants de BTS SIO1kk
 // décompte des démarches effectuées par chaque étudiant associé à un simple professeur
 $stmt = $db->prepare(
     "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM,  COUNT(ETAT) AS NB_ETAT  
@@ -81,7 +81,7 @@ $stmt->execute();
 $etudiantsProfSimpleDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarcheProfsimple = count($etudiantsProfSimpleDemarche);
 
-// Conservation des démarches non nulles selon le ype du professeur
+// Conservation des démarches non nulles selon le ype du professeurggg
 if ($countDemarcheProfref>=1) {
     $demarches=$etudiantsProfRefDemarche;
 } else if ($countDemarcheProfspe>=1) {
