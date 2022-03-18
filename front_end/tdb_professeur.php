@@ -76,11 +76,11 @@
                     <table class="table">
                         <thead>
                                             <tr>
-
                                                 <th scope="col">Nom</th>
                                                 <th scope="col">Prénom</th>
                                                 <th scope="col">Nombres de démarches </th>
                                                 <th scope="col">Actions</th>
+                                                <th scope="col">Etats stage </th>
                                             </tr>
                         </thead>
                         <tbody>
@@ -93,6 +93,7 @@
                                          <td>
                                             <a href="" data-toggle="modal" data-target="#exampleModalCenter"><span class="badge badge-success">Voir</span></a>
                                          </td>
+                                         
                                       </tr> 
                          ';  } ?>
                         </tbody>
