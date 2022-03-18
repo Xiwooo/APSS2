@@ -4,7 +4,7 @@
  *   ce fichier permet de retrouver les informations nécessaires
  *   à l'affichage du tableau de bord
  *      . savoir si le stagiaire a obtenu un stage
- *      . connaitre les démarches effectuées par le candidat
+ *      . connaitrmùe les démarches effectuées par le candidat
  **/ 
 // Conservation de l'identifiant  pour  les traitements sur le professeur
 $id_courant=$_SESSION['id'];
