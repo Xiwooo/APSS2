@@ -4,7 +4,7 @@
  * ce fichier permet  de réaliser les vérifications dans la BDR
  * pour savoir si un professeur ou un étudiant sont autorisés
  * à accéder à l'application
- * * la gestion des erreurs est assurée par les variables show, succès et message
+ * * la gestion des erreurs est assurée par les variables show, succès et message zz
  **/
 $show = false;
 
