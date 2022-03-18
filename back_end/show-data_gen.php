@@ -1,4 +1,6 @@
 <?php 
+include '../back_end/Fonction.php';
+
 /**
  * * NR le 24/12/2020
  *   ce fichier permet de retrouver les informations générales

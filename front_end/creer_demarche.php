@@ -3,16 +3,16 @@
 <?php
     $title = "Créer une nouvelle demarche si l'entreprise existe";
 
-    include_once '../includes/header.php';
-    include_once '../middlewares/etudiant.php';
+    include '../includes/header.php';
+    include '../middlewares/etudiant.php';
 
-    include_once '../back_end/recherche_entreprise.php';
-    include_once '../back_end/creer_demarche.php';
+    include '../back_end/recherche_entreprise.php';
+    include '../back_end/creer_demarche.php';
 ?>
 
 <body>
 <?php
-    include_once '../includes/barnav.php';
+    include '../includes/barnav.php';
 ?>
     <div class="lime-container">
         <div class="lime-body">

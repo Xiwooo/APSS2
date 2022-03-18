@@ -3,16 +3,16 @@
 
 <?php
     $title = "Statistiques";
-    include_once 'includes/header.php';
-    include_once 'middlewares/professeur.php';
-    include_once 'scripts/show-data.php';
+    include 'includes/header.php';
+    include 'middlewares/professeur.php';
+    include 'scripts/show-data.php';
 ?>
 
 <body>
 
 <?php
-    include_once 'includes/leftbar.php';
-    include_once 'includes/topbar.php';
+    include 'includes/leftbar.php';
+    include 'includes/topbar.php';
 ?>
 
     <div class="lime-container">
