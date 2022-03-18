@@ -80,16 +80,24 @@
                                                 <th scope="col">Nom</th>
                                                 <th scope="col">Prénom</th>
                                                 <th scope="col">Nombres de démarches </th>
+                                                <th scope="col">Stage</th>
                                                 <th scope="col">Actions</th>
                                             </tr>
                         </thead>
                         <tbody>
                         <?php foreach ( $demarches as $row ) { 
+                            if ($row['NB_ETAT'] == 1) {
+                                $etat_stage = "✔";
+                            }
+                            else {
+                                $etat_stage = "X";
+                            }
                             echo' 
                                      <tr>
                                          <td>'. $row['NOM_ETUDIANT'].'</td>
                                          <td>'. $row['PRENOM_ETUDIANT'].'</td>
-                                         <td>'. $row['NB_DEM'].'</td>
+                                         <td>'. $row['NB_DEM'].'</td>       
+                                         <td>'. $etat_stage.'</td>
                                          <td>
                                             <a href="" data-toggle="modal" data-target="#exampleModalCenter"><span class="badge badge-success">Voir</span></a>
                                          </td>

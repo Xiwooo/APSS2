@@ -45,11 +45,8 @@
                                     $_SESSION['entreprise_nom'] = $entreprise['NOM_ENTREPRISE'];
                                 ?>
                                 <form action="requete_refus_demarche.php">
-                                        <input type="submit" value="L'entreprise ne souhaite plus être démarchée">
+                                        <input type="submit" value="Refus">
                                 </form>
-                                
-                                
-
                                 
                                 <form method="POST" id="creer_demarche" name="creer_demarche" class="mt-4">
                                     <div class="form-group">

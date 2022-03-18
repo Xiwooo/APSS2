@@ -32,13 +32,14 @@ $countStageAttente = count($stageAttente);
 // Recherche des démarches effectuées par les étudiants de BTS SIO1  
 // pour le professeur de référence de la classe
 $stmt = $db->prepare(
-    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
+    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)AS NB_DEM, COUNT(ETAT) AS NB_ETAT  
         FROM etudiant LEFT JOIN demarche ON ETUDIANT.ID_ETUDIANT=DEMARCHE.ID_ETUDIANT 
+            LEFT JOIN stage ON ETUDIANT.ID_ETUDIANT=STAGE.ID_ETUDIANT
             INNER JOIN classe ON ETUDIANT.ID_CLASSE=CLASSE.ID_CLASSE 
         WHERE LIBELLE_CLASSE='SIO1' AND CLASSE.ID_PROF=:id_courant 
         GROUP BY ETUDIANT.ID_ETUDIANT   
-        ORDER BY NOM_ETUDIANT;"
-);
+        ORDER BY NOM_ETUDIANT;"         
+);  
 $stmt->bindValue(':id_courant', $id_courant, PDO::PARAM_INT);
 $stmt->execute(); 
 $etudiantsProfRefDemarche = $stmt->fetchAll(PDO::FETCH_BOTH);
@@ -48,8 +49,9 @@ $countDemarcheProfref = count($etudiantsProfRefDemarche);
 // décompte des démarches effectuées par chaque étudiant 
 // pour un professeur de spécialité
 $stmt = $db->prepare(
-    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
+    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM, COUNT(ETAT) AS NB_ETAT   
       FROM etudiant 
+          LEFT JOIN stage ON ETUDIANT.ID_ETUDIANT=STAGE.ID_ETUDIANT
           LEFT JOIN demarche ON ETUDIANT.ID_ETUDIANT=DEMARCHE.ID_ETUDIANT 
           INNER JOIN classe ON ETUDIANT.ID_CLASSE=CLASSE.ID_CLASSE 
           INNER JOIN specialite ON SPECIALITE.ID_PROF=ETUDIANT.ID_SPECIALITE 
@@ -65,8 +67,9 @@ $countDemarcheProfspe = count($etudiantsProfSpeDemarche);
 // Recherche des démarches effectuées par les étudiants de BTS SIO1
 // décompte des démarches effectuées par chaque étudiant associé à un simple professeur
 $stmt = $db->prepare(
-    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM  
+    "SELECT  NOM_ETUDIANT,PRENOM_ETUDIANT,COUNT(ID_DEMARCHE)  AS NB_DEM,  COUNT(ETAT) AS NB_ETAT  
         FROM etudiant 
+         LEFT JOIN stage ON ETUDIANT.ID_ETUDIANT=STAGE.ID_ETUDIANT
          LEFT JOIN demarche ON ETUDIANT.ID_ETUDIANT=DEMARCHE.ID_ETUDIANT 
          INNER JOIN classe ON ETUDIANT.ID_CLASSE=CLASSE.ID_CLASSE  
         WHERE LIBELLE_CLASSE='SIO1' AND ETUDIANT.ID_PROF=:id_courant 
@@ -82,10 +85,11 @@ $countDemarcheProfsimple = count($etudiantsProfSimpleDemarche);
 if ($countDemarcheProfref>=1) {
     $demarches=$etudiantsProfRefDemarche;
 } else if ($countDemarcheProfspe>=1) {
-           $demarches=$etudiantsProfSpeDemarche;
+    $demarches=$etudiantsProfSpeDemarche;
 } else { 
     $demarches=$etudiantsProfSimpleDemarche;
 }
+
 
 
 

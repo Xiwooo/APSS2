@@ -52,7 +52,7 @@ $countEntreprisesRefus = count($entrepriseRefus);
 $countEntrepriseTotal = sql_fetch_column("SELECT COUNT(*) FROM entreprise");
 
 // recherche et comptage des stages obtenus par les stagiaires
-//       qui réfusent de répondre à des stages
+//       
 $stmt = $db->prepare("SELECT * FROM stage WHERE ETAT='OK';");
 $stmt->execute();
 $etudiantStage = $stmt->fetchAll(PDO::FETCH_BOTH);

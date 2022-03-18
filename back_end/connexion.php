@@ -65,12 +65,12 @@ if (isset($_POST['connexion'])) {
             } else {   // affichage des erreurs, cybersécurité??
                 $show = true;
                 $color = "danger";
-                $message = "Identifiants incorrects.";
+                $message = "Indentifiant ou mot de passe incorrect.";
             }
         } else {   // affichage des erreurs, cybersécurité??
             $show = true;
             $color = "danger";
-            $message = "L'email n'existe pas.";
+            $message = "Identifiant ou mot de passe incorrect.";
         }
     }        
 }
