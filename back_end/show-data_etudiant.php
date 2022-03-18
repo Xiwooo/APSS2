@@ -6,6 +6,7 @@
  *      . savoir si le stagiaire a obtenu un stage
  *      . connaitre les démarches effectuées par le candidat
  **/ 
+include 'show-data_prof.php';
 $id_et=$_SESSION['id'];
 
 $stmt = $db->prepare("SELECT * FROM stage WHERE ID_ETUDIANT=:id;");
@@ -20,16 +21,15 @@ $countStage = count($stage);
 // et le salarié contacté au sein de l'entreprise
 $stmt = $db->prepare(
     "SELECT ENTREPRISE.ID_ENTREPRISE, NOM_ENTREPRISE,VILLE_ENTREPRISE, NOM_SALARIE, 
-           TEL_SALARIE,DATE_DEMARCHE,COMMENTAIRE,LIBELLE_MOYEN 
+           TEL_SALARIE,DATE_DEMARCHE,COMMENTAIRE,LIBELLE_MOYEN
         FROM salarie,demarche,entreprise,moyencom 
         WHERE MOYENCOM.ID_MOYEN=DEMARCHE.ID_MOYEN AND 
               DEMARCHE.ID_SALARIE=SALARIE.ID_SALARIE AND
             ENTREPRISE.ID_ENTREPRISE= SALARIE.ID_ENTREPRISE AND 
-            DEMARCHE.ID_ETUDIANT=:id 
+            DEMARCHE.ID_ETUDIANT=:id
         ORDER BY DATE_DEMARCHE  DESC"
 );
-
-$stmt->bindValue(':id', $id_et, PDO::PARAM_INT);
+$stmt->bindValue(':id', $_GET['id']);
 $stmt->execute(); 
 $demarches = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countDemarches= count($demarches);

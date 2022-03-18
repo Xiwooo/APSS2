@@ -57,4 +57,5 @@ $stmt = $db->prepare("SELECT * FROM stage WHERE ETAT='OK';");
 $stmt->execute();
 $etudiantStage = $stmt->fetchAll(PDO::FETCH_BOTH);
 $countEtudiantStage = count($etudiantStage);
+
 ?>

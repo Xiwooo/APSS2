@@ -7,7 +7,7 @@
     include '../middlewares/professeur.php';     
     include '../back_end/show-data_gen.php';    
     include '../back_end/show-data_prof.php';  
-      
+    
 
     ?>
 
@@ -85,15 +85,21 @@
                                             </tr>
                         </thead>
                         <tbody>
+                        
                         <?php foreach ( $demarches as $row ) { 
+                            
                             echo' 
                                      <tr>
                                          <td>'. $row['NOM_ETUDIANT'].'</td>
                                          <td>'. $row['PRENOM_ETUDIANT'].'</td>
                                          <td>'. $row['NB_DEM'].'</td>
-                                         <td>
-                                          <a href="voir_stage.php?id='.$row['NOM_ETUDIANT'].'"><span class="badge badge-success">Voir</span></a>
+                                        
+                                            <td>
+                                         <a href="voir_stage.php?id='.$row['ID_ETUDIANT'].'"><span class="badge badge-success">Voir</span></a>
                                          </td>
+                                        
+                                         
+                                        
                                       </tr> 
                          ';  } ?>
                         </tbody>
