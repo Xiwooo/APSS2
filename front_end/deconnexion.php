@@ -2,7 +2,7 @@
 /**
  * * NR le 24/12/2020
  *   ce fichier permet de réinitialiserles variables de session et 
- *    déconnecté l'utilisateur
+ *    déconnecté l'utilisateurjmj
  *    L'affichage propose de nouyveau les deux types d'utilisateurhjkjl&érefdhyuezrjkfduirhgjk
  **/ 
  session_start();
