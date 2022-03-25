@@ -7,7 +7,7 @@
  * * la gestion des erreurs est assurée par les variables show, succès et message
  **/
 
- //test
+ //test//
  
 $show = false;
 
