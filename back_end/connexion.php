@@ -6,8 +6,6 @@
  * à accéder à l'application
  * * la gestion des erreurs est assurée par les variables show, succès et message
  **/
-
- //test///
  
 $show = false;
 
