@@ -31,6 +31,33 @@
                                         aria-valuenow="<?php echo $percent ?>" aria-valuemin="0" aria-valuemax="100">
                                     </div>
                                 </div>
+                                <?php $mdp = password_hash("toto", PASSWORD_DEFAULT);
+                    $reqEtudiant = $db->prepare("SELECT * FROM ETUDIANT");
+                    $reqEtudiant->execute();
+                    $etudiant = $reqEtudiant->fetchAll(PDO::FETCH_BOTH);
+
+                    var_dump($etudiant);
+
+                    $reqProf = $db->prepare("SELECT * FROM professeur");
+                    $reqProf->execute();
+                    $prof = $reqProf->fetchAll(PDO::FETCH_BOTH);
+
+                    foreach($etudiant as $row)
+                    {
+                        $mdp = password_hash("toto", PASSWORD_DEFAULT);
+                        $reqe = $db->prepare("UPDATE ETUDIANT SET MDP = :hashmdp WHERE ID_ETUDIANT = :id");
+                        $reqe->bindValue(":hashmdp", $mdp, PDO::PARAM_STR);
+                        $reqe->bindValue(":id", $row["ID_ETUDIANT"],PDO::PARAM_INT);
+                        $resultate =$reqe->execute();
+                    }
+                    foreach($prof as $row)
+                    {
+                        $mdp = password_hash("toto", PASSWORD_DEFAULT);
+                        $reqp = $db->prepare("UPDATE PROFESSEUR SET MDP = :hashmdp WHERE ID_PROF = :id");
+                        $reqp->bindValue(":hashmdp", $mdp, PDO::PARAM_STR);
+                        $reqp->bindValue(":id", $row["ID_PROF"],PDO::PARAM_INT);
+                        $resultatp = $reqp->execute();
+                    } ?>
                 </div>
         </div>
     </div>

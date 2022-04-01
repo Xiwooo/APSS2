@@ -10,7 +10,8 @@
     ?>
 
     <body>     
-      <?php  include '../includes/barnav.php';  
+      <?php  include '../includes/barnav.php'; 
+       
              include 'tbd_gen.php'; 
              if ($countStage==1)
                 echo '
@@ -21,7 +22,9 @@
                     include 'lister_dern_dem_et.php'; 
                  else 
                     include 'lister_dern_entreprise.php';
+        
         ?>
+        
             <div class="lime-footer">
                 <div class="container">
                     <div class="row">
